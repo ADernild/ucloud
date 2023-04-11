@@ -5,7 +5,7 @@ source ../env/.env
 
 DIR=etc/pgbouncer/
 
-mkdir -p ${DIR}
+mkdir -p ${DIR} > /dev/null
 
 echo "[databases]
 ${DBNAME} = host=${DBHOST} port=5432 dbname=${DBNAME} user=${DBUSER} password=${DBPASS}
