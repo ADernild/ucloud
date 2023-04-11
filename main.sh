@@ -53,6 +53,12 @@ if _ucld_::is_python_installed; then
 
 fi
 
+if _ucld_::ask "Do you want to setup PgBouncer"; then
+  # shellcheck source=/dev/null
+  . "pgbouncer/main.sh"
+  echo
+fi
+
 if _ucld_::ask "Do you want to reset your settings"; then
   _ucld_::reset_settings
   _ucld_::show_settings
