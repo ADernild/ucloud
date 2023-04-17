@@ -33,6 +33,13 @@ if _ucld_::is_postgresql_app_running; then
     # shellcheck source=/dev/null
     . "postgresql/main.sh"
     echo
+
+    if _ucld_::ask "Do you want to setup PgBouncer"; then
+      # shellcheck source=/dev/null
+      . "pgbouncer/main.sh"
+      echo
+    fi
+
   fi
 
 fi
@@ -51,12 +58,6 @@ if _ucld_::is_python_installed; then
     echo
   fi
 
-fi
-
-if _ucld_::ask "Do you want to setup PgBouncer"; then
-  # shellcheck source=/dev/null
-  . "pgbouncer/main.sh"
-  echo
 fi
 
 if _ucld_::ask "Do you want to reset your settings"; then
