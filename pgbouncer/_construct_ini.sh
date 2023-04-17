@@ -8,7 +8,7 @@ DIR=etc/pgbouncer/
 mkdir -p ${DIR} > /dev/null
 
 echo "[databases]
-${DBNAME} = host=${DBHOST} port=5432 dbname=${DBNAME} user=${DBUSER} password=${DBPASS}
+${DBNAME} = host=localhost port=5432 dbname=${DBNAME} user=${DBUSER} password=${DBPASS}
 
 [pgbouncer]
 listen_port = 6432
